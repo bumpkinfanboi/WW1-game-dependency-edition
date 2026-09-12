@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "keyboard>=0.13.5",
+]
 
 [project.scripts]
 ihatemyoldww1game = "ihatemyoldww1game:main"
