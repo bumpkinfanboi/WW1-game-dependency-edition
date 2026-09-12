@@ -9,19 +9,21 @@ TODO:
     Add movement  
     Add real-time keyboard input using the keyboard library  
 
-How to setup uv:  
-install python :D  
-run this in the main folder (the one with this readme file):  
-python3 -m venv .venv  
-then run this:  
-source .venv/bin/activate  
-then this:  
-pip install uv  
-and this:  
-uv sync  
-and finally this to check if you actually have the dependencies:  
-uv pip freeze  
+## Setup Python Dependencies
+Make sure python is installed.
+```
+# install uv by running this:
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# (if your on windows, run this instead):
+wget -qO- https://astral.sh/uv/install.sh | sh
+
+# Run this in the main folder (the one with this readme file)
+uv sync
+
+# Finally this to check if you actually have the dependencies:  
+uv export --format requirements.txt > requirements.txt
+```
+
   
-if these instructions are wrong, look up how to install uv.  
-if your wondering: "python dependency hell IS a real place and you will be sent there at  
-the first sign of defiance." - balogina 2026  
+If these instructions are wrong, look up how to install uv.
+If your wondering: Yes, Python dependency hell IS a real place and you will be sent there at the first sign of defiance.
