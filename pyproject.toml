@@ -5,7 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "keyboard>=0.13.5",
+    "keyboard==0.13.5",
+    "pip==24.0",
+    "uv==0.12.13",
 ]
 
 [project.scripts]
