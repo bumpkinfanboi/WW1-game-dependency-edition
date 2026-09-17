@@ -8,8 +8,8 @@ import json
 difficulty = ""
 class player:
     def __init__(self):
-        self.position = {}
-        self.inventory = []
+        self.position = {} #figure that out
+        self.inventory = [] # multiple bags (also equip slots?)
     def intro(self):
         global difficulty
         introOutput = introsequence.start()
@@ -42,6 +42,5 @@ class player:
             print("NEW HEALTH = " + str(self.stats["health"][organ]))
     #def manage_inventory(self, item, action, amount=None):
 
-        
 user = player()
 user.intro()
