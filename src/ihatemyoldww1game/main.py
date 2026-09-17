@@ -4,6 +4,7 @@ import introsequence
 import os
 import keyboard
 import json
+import math
 
 difficulty = ""
 class player:
@@ -56,7 +57,7 @@ class container:
             else:
                 print("Container calss can't find difficulty! Defaulting to 1!")
                 _diff_mult = 1
-            self.max_capacity = max_cap * _diff_mult
+            self.max_capacity = math.ceil(max_cap * _diff_mult)
         else: self.max_capacity = max_cap
         if weight_reduction == None:
             self.encumbrance_mult = 1
@@ -66,7 +67,11 @@ class container:
         _counter = 0
         for i in self.items_contained:
             i["weight"]*self.encumbrance_mult += _counter
+        if _counter > self.max_capacity:
+            print("OVERCAP!!") # TODO: add something there besides a print error
         return _counter
+    #def use_container(self, item, add_or_remove):
+
 
 user = player()
 user.intro()
