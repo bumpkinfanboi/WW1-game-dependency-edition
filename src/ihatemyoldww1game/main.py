@@ -42,5 +42,31 @@ class player:
             print("NEW HEALTH = " + str(self.stats["health"][organ]))
     #def manage_inventory(self, item, action, amount=None):
 
+class container:
+    def __init__(self, max_cap, weight_reduction = None, difficulty_scaled=False,):
+        global difficulty
+        self.items_contained = []
+        if difficulty_scaled == True:
+            if difficulty == "easy":
+                _diff_mult = 1.3
+            elif difficulty == "medium":
+                _diff_mult = 1
+            elif difficulty == "hard":
+                _diff_mult = 0.8
+            else:
+                print("Container calss can't find difficulty! Defaulting to 1!")
+                _diff_mult = 1
+            self.max_capacity = max_cap * _diff_mult
+        else: self.max_capacity = max_cap
+        if weight_reduction == None:
+            self.encumbrance_mult = 1
+        else:
+            self.encumbrance_mult = weight_reduction
+    def checkmaxcap(self):
+        _counter = 0
+        for i in self.items_contained:
+            i["weight"]*self.encumbrance_mult += _counter
+        return _counter
+
 user = player()
 user.intro()
